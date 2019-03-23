@@ -1,7 +1,7 @@
 class Api::SpeakersController < ApplicationController
   def index
     if params[:search]
-      @speakers = Speaker.where("name iLIKE ?", "%#{params[:search]}%")
+      @speakers = Speaker.where("last_name iLIKE ?", "%#{params[:search]}%")
     else
       @speakers = Speaker.all
     end
